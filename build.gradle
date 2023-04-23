@@ -1,0 +1,44 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    api 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    api 'com.google.guava:guava:31.1-jre'
+    api 'io.pebbletemplates:pebble:3.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.1'
+}
+
+group = 'tech.tablesaw'
+version = '1.0.0-rc-1-SNAPSHOT'
+description = 'plotly.java'
+java.sourceCompatibility = JavaVersion.VERSION_11
+
+java {
+    withJavadocJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+  options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test).configureEach {
+  useJUnitPlatform()
+  testLogging {
+    events = [TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.FAILED]
+  }
+}
