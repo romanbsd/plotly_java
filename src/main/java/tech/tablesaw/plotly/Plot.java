@@ -94,6 +94,6 @@ public class Plot {
   }
 
   protected static String randomizedFileName() {
-    return DEFAULT_OUTPUT_FILE_NAME + UUID.randomUUID().toString() + ".html";
+    return DEFAULT_OUTPUT_FILE_NAME + UUID.randomUUID() + ".html";
   }
 }

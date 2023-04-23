@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.base.Preconditions;
 import java.util.HashMap;
 import java.util.Map;
-import tech.tablesaw.plotly.Utils;
 
 public class Marker extends Component {
 

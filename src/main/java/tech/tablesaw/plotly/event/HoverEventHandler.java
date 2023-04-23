@@ -3,7 +3,7 @@ package tech.tablesaw.plotly.event;
 public class HoverEventHandler implements EventHandler {
 
   private final EventHandlerBody body;
-  private final String eventDataVarName = "eventData";
+  private static final String eventDataVarName = "eventData";
 
   public static HoverEventHanlderBuilder builder() {
     return new HoverEventHanlderBuilder();
@@ -22,18 +22,11 @@ public class HoverEventHandler implements EventHandler {
    */
   @Override
   public String asJavascript(String targetName, String divName) {
-    StringBuilder builder = new StringBuilder();
-
-    builder.append(
-        String.format("%s.on('plotly_hover', function(%s){", targetName, eventDataVarName));
-    builder.append(System.lineSeparator());
-
-    builder.append(body.asJavascript(targetName, divName, eventDataVarName));
-
-    builder.append("});");
-    builder.append(System.lineSeparator());
-
-    return builder.toString();
+    return String.format("%s.on('plotly_hover', function(%s){", targetName, eventDataVarName)
+            + System.lineSeparator()
+            + body.asJavascript(targetName, divName, eventDataVarName)
+            + "});"
+            + System.lineSeparator();
   }
 
   public static class HoverEventHanlderBuilder {

@@ -1,15 +1,14 @@
 package tech.tablesaw.plotly.traces;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
 import java.io.Writer;
 import java.util.Arrays;
 import java.util.Map;
-import tech.tablesaw.plotly.Utils;
 import tech.tablesaw.plotly.components.Marker;
 
 public class HistogramTrace extends AbstractTrace {
@@ -136,13 +135,13 @@ public class HistogramTrace extends AbstractTrace {
 
   public static class HistogramBuilder extends TraceBuilder {
 
-    private final String type = "histogram";
+    private final static String type = "histogram";
     private int nBinsX;
     private int nBinsY;
     private boolean autoBinX = true;
     private boolean autoBinY = true;
     private boolean horizontal = false;
-    private Object[] x;
+    private final Object[] x;
     private Object[] y;
     private Marker marker;
     private HistNorm histNorm = HistNorm.NONE;

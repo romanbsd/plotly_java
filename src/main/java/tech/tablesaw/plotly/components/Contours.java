@@ -92,9 +92,8 @@ public class Contours extends Component {
 
     @Override
     protected Map<String, Object> getJSONContext() {
-        Map<String, Object> context = new HashMap<>();
 
-        return context;
+      return new HashMap<>();
     }
 
 
@@ -107,7 +106,7 @@ public class Contours extends Component {
         public boolean showLabels;
         public boolean showLines;
         public double size;
-        public Operations operations = Operations.EQUAL;
+        public final Operations operations = Operations.EQUAL;
         private Coloring coloring;
         private double number;
         private Font labelFont;

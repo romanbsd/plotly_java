@@ -1,8 +1,8 @@
 package tech.tablesaw.plotly.components;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mitchellbosecke.pebble.PebbleEngine;
 
+import io.pebbletemplates.pebble.PebbleEngine;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;

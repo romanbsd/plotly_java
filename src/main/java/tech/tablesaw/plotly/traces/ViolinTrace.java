@@ -2,8 +2,8 @@ package tech.tablesaw.plotly.traces;
 
 import static tech.tablesaw.plotly.Utils.dataAsString;
 
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import tech.tablesaw.plotly.components.Marker;
 
 import java.io.IOException;
@@ -77,7 +77,7 @@ public class ViolinTrace extends AbstractTrace {
 
   public static class ViolinBuilder extends TraceBuilder {
 
-    private static final String type = "violin";
+    private final static String type = "violin";
     private final Object[] x;
     private final double[] y;
     private boolean showBoxPlot;

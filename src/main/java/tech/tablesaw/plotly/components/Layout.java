@@ -1,9 +1,9 @@
 package tech.tablesaw.plotly.components;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mitchellbosecke.pebble.PebbleEngine;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.PebbleEngine;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -236,19 +236,12 @@ public class Layout {
       context.put("autosize", autoSize);
       // since autosize is true, we assume the default width / height values are not wanted, not
       // serialize them, and let Plotly compute them
-      if (width > 0) {
-        context.put("width", width);
-      }
-      if (height > 0) {
-        context.put("height", height);
-      }
-    } else {
-      if (width > 0) {
-        context.put("width", width);
-      }
-      if (height > 0) {
-        context.put("height", height);
-      }
+    }
+    if (width > 0) {
+      context.put("width", width);
+    }
+    if (height > 0) {
+      context.put("height", height);
     }
     if (hoverDistance != DEFAULT_HOVER_DISTANCE) context.put("hoverdistance", hoverDistance);
     if (!hoverMode.equals(DEFAULT_HOVER_MODE)) context.put("hoverMode", hoverMode);

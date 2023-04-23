@@ -2,8 +2,8 @@ package tech.tablesaw.plotly.traces;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.base.Preconditions;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import tech.tablesaw.plotly.components.*;
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ import static tech.tablesaw.plotly.Utils.dataAsString;
 /**
  * A `contour` trace is an object with the key `"type"` equal to `"contour"` (i.e. `{"type": "contour"}`)
  * and any of the keys listed below.
- *
+ * <p>
  * The data from which contour lines are computed is set in `z`. Data in `z` must be a 2D array of numbers.
  * Say that `z` has N rows and M columns, then by default,
  * these N rows correspond to N y coordinates (set in `y` or auto-generated)
@@ -52,7 +52,7 @@ public class ContourTrace extends AbstractTrace {
   }
   /**
    * subplotid
-   *
+   * <p>
    * Sets a reference to a shared color axis.
    * References to these shared color axes are "coloraxis", "coloraxis2", "coloraxis3", etc.
    * Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc.
@@ -135,7 +135,7 @@ public class ContourTrace extends AbstractTrace {
 
   public static class ContourBuilder extends TraceBuilder {
 
-    private static final String type = "contour";
+    private final static String type = "contour";
     private final Object[] x;
     private final Object[] y;
     private final double[][] z;
@@ -178,7 +178,7 @@ public class ContourTrace extends AbstractTrace {
 
     /**
      * number or categorical coordinate string
-     *
+     * <p>
      * Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces,
      * as well as some `editable: true` modifications such as `name` and `colorbar.title`.
      * Defaults to `layout.uirevision`.
@@ -186,7 +186,7 @@ public class ContourTrace extends AbstractTrace {
      * `trace.visible` is controlled by `layout.legend.uirevision`,
      * `selectedpoints` is controlled by `layout.selectionrevision`, and `
      * colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`.
-     *
+     * <p>
      * Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided.
      * So if your app can add/remove traces before the end of the `data` array,
      * such that the same trace has a different index, you can still preserve user-driven changes

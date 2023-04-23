@@ -3,8 +3,8 @@ package tech.tablesaw.plotly.traces;
 import static tech.tablesaw.plotly.Utils.dataAsString;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -49,7 +49,6 @@ public class BarTrace extends AbstractTrace {
   }
 
   private Map<String, Object> getContext(int i) {
-
     Map<String, Object> context = super.getContext();
     context.put("variableName", "trace" + i);
     if (orientation == Orientation.HORIZONTAL) {
@@ -84,8 +83,7 @@ public class BarTrace extends AbstractTrace {
   }
 
   public static class BarBuilder extends TraceBuilder {
-
-    private final String type = "bar";
+    private final static String type = "bar";
     private final Object[] x;
     private final double[] y;
     private Orientation orientation = Orientation.VERTICAL;
@@ -101,7 +99,7 @@ public class BarTrace extends AbstractTrace {
     }
 
     /**
-     * Sets the orientation of the bars. With "v" ("h"), the value of the each bar spans along the
+     * Sets the orientation of the bars. With "v" ("h"), the value of each bar spans along the
      * vertical (horizontal).
      */
     public BarBuilder orientation(Orientation orientation) {

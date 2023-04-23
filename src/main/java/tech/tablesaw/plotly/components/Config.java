@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Config extends Component {
 
-  public static enum ModeBarDisplay {
+  public enum ModeBarDisplay {
     ALWAYS("true"),
     NEVER("false"),
     ON_HOVER("on-hover"); // This is the default

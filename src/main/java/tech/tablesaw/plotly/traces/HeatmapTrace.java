@@ -2,8 +2,8 @@ package tech.tablesaw.plotly.traces;
 
 import static tech.tablesaw.plotly.Utils.dataAsString;
 
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -59,7 +59,7 @@ public class HeatmapTrace extends AbstractTrace {
 
   public static class HeatmapBuilder extends TraceBuilder {
 
-    private static final String type = "heatmap";
+    private final static String type = "heatmap";
     private final Object[] x;
     private final Object[] y;
     private final double[][] z;

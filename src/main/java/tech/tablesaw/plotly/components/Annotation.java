@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * This is to supply annotation in Plot.ly reference to
- * https://plotly.com/javascript/reference/layout/annotations/. Support most of
+ * <a href="https://plotly.com/javascript/reference/layout/annotations/">...</a>. Support most of
  * apis there.
  */
 public class Annotation extends Component {

@@ -1,8 +1,9 @@
 package tech.tablesaw.plotly.traces;
 
-import com.mitchellbosecke.pebble.PebbleEngine;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+
+import io.pebbletemplates.pebble.PebbleEngine;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -61,7 +62,7 @@ public abstract class AbstractTrace implements Trace {
   /**
    *
    * The default legendrank is 1000
-   *
+   * <p>
    * Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side
    * while with `"reversed" `legend.traceorder` they are on bottom/right side.
    * The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items

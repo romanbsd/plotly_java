@@ -1,11 +1,5 @@
 package tech.tablesaw.plotly.components.threeD;
 
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.UncheckedIOException;
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 import tech.tablesaw.plotly.components.Axis;

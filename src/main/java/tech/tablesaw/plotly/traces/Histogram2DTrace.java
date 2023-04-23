@@ -1,7 +1,7 @@
 package tech.tablesaw.plotly.traces;
 
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -51,7 +51,7 @@ public class Histogram2DTrace extends AbstractTrace {
 
   public static class Histogram2DBuilder extends TraceBuilder {
 
-    private final String type = "histogram2d";
+    private final static String type = "histogram2d";
     /*
     private int bins;
     private String barMode;

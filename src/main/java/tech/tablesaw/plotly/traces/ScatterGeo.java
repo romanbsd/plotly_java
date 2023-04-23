@@ -2,8 +2,8 @@ package tech.tablesaw.plotly.traces;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.base.Preconditions;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import io.pebbletemplates.pebble.error.PebbleException;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 import tech.tablesaw.plotly.Utils;
 import tech.tablesaw.plotly.components.LocationMode;
 import tech.tablesaw.plotly.components.Marker;
@@ -113,12 +113,12 @@ public class ScatterGeo extends AbstractTrace {
 
     public static class ScatterGeoBuilder extends TraceBuilder {
 
-        private final String type = "scattergeo";
+        private final static String type = "scattergeo";
         private ScatterTrace.Mode mode = ScatterTrace.Mode.MARKERS;
         private Marker marker;
         private String geo = "geo";
-        private double[] lat;
-        private double[] lon;
+        private final double[] lat;
+        private final double[] lon;
         private LocationMode locationMode = LocationMode.ISO_3;
         private TextPosition[] textPosition;
         private String[] text;
