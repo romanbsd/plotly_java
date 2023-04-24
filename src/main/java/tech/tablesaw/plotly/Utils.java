@@ -1,5 +1,8 @@
 package tech.tablesaw.plotly;
 
+import static tech.tablesaw.plotly.JsonMapper.JSON_MAPPER;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
 import java.util.Arrays;
 
@@ -7,11 +10,17 @@ public class Utils {
 
   private Utils() {}
 
+  public static String toJSON(Object obj) {
+    try {
+      return JSON_MAPPER.writeValueAsString(obj);
+    } catch (JsonProcessingException e) {
+      throw new RuntimeException(e);
+    }
+  }
 
   public static String dataAsString(double[] data) {
     return Arrays.toString(data);
   }
-
 
   /** @return un-escaped quote of argument */
   public static String quote(String string) {

@@ -6,6 +6,21 @@ x: {{x | raw}},
 {% if y is not null %}
 y: {{y | raw}},
 {% endif %}
+{% if open is not null %}
+open: {{open | raw}},
+{% endif %}
+{% if high is not null %}
+high: {{high | raw}},
+{% endif %}
+{% if low is not null %}
+low: {{low | raw}},
+{% endif %}
+{% if close is not null %}
+close: {{close | raw}},
+{% endif %}
+{% if line is not null %}
+line: {{line | raw}},
+{% endif %}
 {% if lat is not null %}
 lat: {{lat | raw}},
 {% endif %}
