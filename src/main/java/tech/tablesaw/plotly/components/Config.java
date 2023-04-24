@@ -28,11 +28,13 @@ public class Config extends Component {
   private final ModeBarDisplay displayModeBar;
   private final Boolean responsive;
   private final Boolean displayLogo;
+  private final Boolean scrollZoom;
 
   private Config(Builder builder) {
     this.displayModeBar = builder.displayModeBar;
     this.responsive = builder.responsive;
     this.displayLogo = builder.displayLogo;
+    this.scrollZoom = builder.scrollZoom;
   }
 
   public static Builder builder() {
@@ -60,6 +62,7 @@ public class Config extends Component {
 
     context.put("responsive", responsive);
     context.put("displaylogo", displayLogo);
+    context.put("scrollZoom", scrollZoom);
     return context;
   }
 
@@ -68,6 +71,7 @@ public class Config extends Component {
     ModeBarDisplay displayModeBar = ModeBarDisplay.ON_HOVER;
     Boolean responsive = Boolean.TRUE;
     Boolean displayLogo = Boolean.FALSE;
+    Boolean scrollZoom = Boolean.FALSE;
 
     private Builder() {}
 
@@ -83,6 +87,11 @@ public class Config extends Component {
 
     public Builder displayLogo(boolean displayLogo) {
       this.displayLogo = displayLogo;
+      return this;
+    }
+
+    public Builder scrollZoom(boolean scrollZoom) {
+      this.scrollZoom = scrollZoom;
       return this;
     }
 

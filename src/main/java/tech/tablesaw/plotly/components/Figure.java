@@ -58,7 +58,7 @@ public class Figure {
   }
 
   public String divString(String divName) {
-    return String.format("<div id='%s' ></div>" + System.lineSeparator(), divName);
+    return String.format("<div id='%s'></div>\n", divName);
   }
 
   public Layout getLayout() {
@@ -139,8 +139,7 @@ public class Figure {
 
   protected String plotFunction(String divName) {
     StringBuilder builder = new StringBuilder();
-
-    builder.append("var data = [ ");
+    builder.append("var data = [");
     for (int i = 0; i < data.length; i++) {
       builder.append("trace").append(i);
       if (i < data.length - 1) {

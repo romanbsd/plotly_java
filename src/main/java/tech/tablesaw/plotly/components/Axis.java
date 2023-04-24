@@ -372,7 +372,7 @@ public class Axis extends Component {
     private RangeMode rangeMode = RangeMode.NORMAL;
     private AutoRange autoRange = DEFAULT_AUTO_RANGE;
     private Object[] range;
-    private boolean fixedRange = true; // true means the axis cannot be zoomed
+    private boolean fixedRange = false; // true means the axis cannot be zoomed
 
     private TickSettings tickSettings;
 

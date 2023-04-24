@@ -40,9 +40,8 @@ class FigureTest {
         "yaxis: 'y'," + LINE_END +
         "type: 'scatter'," + LINE_END +
         "name: ''," + LINE_END +
-        "};" + LINE_END +
-        "" + LINE_END +
-        "        var data = [ trace0];" + LINE_END +
+        "};" + LINE_END + LINE_END +
+        "        var data = [trace0];" + LINE_END +
         "Plotly.newPlot(target_target, data, layout, config);            </script>" + LINE_END,
         figure.asJavascript(divName));
   }
@@ -114,9 +113,8 @@ class FigureTest {
             "yaxis: 'y'," + LINE_END +
             "type: 'scatter'," + LINE_END +
             "name: ''," + LINE_END +
-            "};" + LINE_END +
-            "" + LINE_END +
-            "        var data = [ trace0];" + LINE_END +
+            "};" + LINE_END + LINE_END +
+            "        var data = [trace0];" + LINE_END +
             "Plotly.newPlot(target_target, data, layout);            </script>" + LINE_END;
     String actual = figure.asJavascript(divName);
     assertNotEquals(expected, actual);
