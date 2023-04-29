@@ -1,5 +1,7 @@
 package tech.tablesaw.plotly.traces;
 
+import static tech.tablesaw.plotly.Utils.dataAsString;
+
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.base.Preconditions;
 import io.pebbletemplates.pebble.error.PebbleException;
@@ -133,7 +135,7 @@ public class ScatterTrace extends AbstractTrace {
     context.put("variableName", "trace" + i);
     context.put("mode", mode);
     if (x != null) {
-      context.put("x", Arrays.toString(x));
+      context.put("x", dataAsString(x));
     }
     if (y != null) {
       context.put("y", Arrays.toString(y));
@@ -228,7 +230,7 @@ public class ScatterTrace extends AbstractTrace {
   public static class ScatterBuilder extends TraceBuilder {
 
     private String type = "scatter";
-    private Mode mode = Mode.MARKERS;
+    private Mode mode = Mode.LINE_TEXT_AND_MARKERS;
     private final Object[] x;
     private Object[] y;
     private String[] text;

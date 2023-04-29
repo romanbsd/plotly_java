@@ -22,13 +22,11 @@ public abstract class Component {
   protected abstract Map<String, Object> getJSONContext();
 
   public String asJSON() {
-    StringWriter w = new StringWriter();
     try {
-      JSON_MAPPER.writeValue(w, getJSONContext());
+      return JSON_MAPPER.writeValueAsString(getJSONContext());
     } catch (IOException ioe) {
       throw new UncheckedIOException(ioe);
     }
-    return w.toString();
   }
 
   @Override
